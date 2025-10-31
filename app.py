@@ -7,7 +7,7 @@ import tensorflow as tf
 # ---- Load model and class names ----
 @st.cache_resource
 def load_model():
-    return tf.keras.models.load_model("banana_ripeness_model.h5")
+    return tf.keras.models.load_model("banana_ripeness_model.keras")
 
 @st.cache_data
 def load_class_names():
@@ -18,7 +18,7 @@ model = load_model()
 class_names = load_class_names()
 
 # ---- App UI ----
-st.title("Banana Ripeness Classifier")
+st.title("🍌 Banana Ripeness Classifier")
 st.write("Upload a banana image to predict ripeness category.")
 
 uploaded = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
